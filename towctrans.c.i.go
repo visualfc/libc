@@ -21,7 +21,7 @@ func _cgos_casemap_towctrans(c uint32, dir int32) int32 {
 	x = c / uint32(3)
 	y = c % uint32(3)
 	v = uint32(*(*uint8)(unsafe.Pointer(uintptr(unsafe.Pointer((*uint8)(unsafe.Pointer(&_cgos_tab_towctrans)))) + uintptr(uint32(int32(*(*uint8)(unsafe.Pointer(uintptr(unsafe.Pointer((*uint8)(unsafe.Pointer(&_cgos_tab_towctrans)))) + uintptr(b))))*int32(86))+x))))
-	v = v * uint32(*(*int32)(unsafe.Pointer(uintptr(unsafe.Pointer((*int32)(unsafe.Pointer(&_cgos_mt_towctrans)))) + uintptr(y)*4))) >> int32(11) % uint32(6)
+	v = v * uint32(*(*int32)(unsafe.Pointer(uintptr(unsafe.Pointer((*int32)(unsafe.Pointer(&_cgos_casemap_mt_towctrans)))) + uintptr(y)*4))) >> int32(11) % uint32(6)
 	r = *(*int32)(unsafe.Pointer(uintptr(unsafe.Pointer((*int32)(unsafe.Pointer(&_cgos_rules_towctrans)))) + uintptr(uint32(*(*uint8)(unsafe.Pointer(uintptr(unsafe.Pointer((*uint8)(unsafe.Pointer(&_cgos_rulebases_towctrans)))) + uintptr(b))))+v)*4))
 	rt = uint32(r & int32(255))
 	rd = r >> int32(8)
@@ -56,7 +56,7 @@ func _cgos_casemap_towctrans(c uint32, dir int32) int32 {
 	return c0
 }
 
-var _cgos_mt_towctrans [3]int32 = [3]int32{int32(2048), int32(342), int32(57)}
+var _cgos_casemap_mt_towctrans [3]int32 = [3]int32{int32(2048), int32(342), int32(57)}
 
 func towlower(wc uint32) uint32 {
 	return uint32(_cgos_casemap_towctrans(wc, int32(0)))

@@ -3,7 +3,7 @@ package libc
 import unsafe "unsafe"
 
 type _cgos_cookie_vswprintf struct {
-	ws *uint32
+	ws *int32
 	l  uint64
 }
 
@@ -24,7 +24,7 @@ func _cgos_sw_write_vswprintf(f *Struct__IO_FILE, s *uint8, l uint64) uint64 {
 		c.l--
 		*(*uintptr)(unsafe.Pointer(&c.ws)) += 4
 	}
-	*c.ws = uint32(0)
+	*c.ws = int32(0)
 	if i < int32(0) {
 		f.Wpos = func() (_cgo_ret *uint8) {
 			_cgo_addr := &f.Wbase
@@ -46,7 +46,7 @@ func _cgos_sw_write_vswprintf(f *Struct__IO_FILE, s *uint8, l uint64) uint64 {
 	}()
 	return l0
 }
-func vswprintf(s *uint32, n uint64, fmt *uint32, ap []interface {
+func vswprintf(s *int32, n uint64, fmt *int32, ap []interface {
 }) int32 {
 	var r int32
 	var buf [256]uint8

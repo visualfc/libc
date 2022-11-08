@@ -67,7 +67,7 @@ func __get_locale(cat int32, val *int8) *struct___locale_map {
 		}
 		return (*struct___locale_map)(nil)
 	}
-	for p = (*struct___locale_map)(_cgos_loc_head_locale_map); p != nil; p = p.next {
+	for p = (*struct___locale_map)(_cgos___get_locale_loc_head_locale_map); p != nil; p = p.next {
 		if !(Strcmp(val, (*int8)(unsafe.Pointer(&p.name))) != 0) {
 			return p
 		}
@@ -104,8 +104,8 @@ func __get_locale(cat int32, val *int8) *struct___locale_map {
 				new.map_size = map_size
 				Memcpy(unsafe.Pointer((*int8)(unsafe.Pointer(&new.name))), unsafe.Pointer(val), n)
 				*(*int8)(unsafe.Pointer(uintptr(unsafe.Pointer((*int8)(unsafe.Pointer(&new.name)))) + uintptr(n))) = int8(0)
-				new.next = (*struct___locale_map)(_cgos_loc_head_locale_map)
-				_cgos_loc_head_locale_map = unsafe.Pointer(new)
+				new.next = (*struct___locale_map)(_cgos___get_locale_loc_head_locale_map)
+				_cgos___get_locale_loc_head_locale_map = unsafe.Pointer(new)
 				break
 			}
 		}
@@ -119,8 +119,8 @@ func __get_locale(cat int32, val *int8) *struct___locale_map {
 		new.map_size = __c_dot_utf8.map_size
 		Memcpy(unsafe.Pointer((*int8)(unsafe.Pointer(&new.name))), unsafe.Pointer(val), n)
 		*(*int8)(unsafe.Pointer(uintptr(unsafe.Pointer((*int8)(unsafe.Pointer(&new.name)))) + uintptr(n))) = int8(0)
-		new.next = (*struct___locale_map)(_cgos_loc_head_locale_map)
-		_cgos_loc_head_locale_map = unsafe.Pointer(new)
+		new.next = (*struct___locale_map)(_cgos___get_locale_loc_head_locale_map)
+		_cgos___get_locale_loc_head_locale_map = unsafe.Pointer(new)
 	}
 	if !(new != nil) && cat == int32(0) {
 		new = (*struct___locale_map)(unsafe.Pointer(&__c_dot_utf8))
@@ -128,4 +128,4 @@ func __get_locale(cat int32, val *int8) *struct___locale_map {
 	return new
 }
 
-var _cgos_loc_head_locale_map unsafe.Pointer
+var _cgos___get_locale_loc_head_locale_map unsafe.Pointer

@@ -23,7 +23,7 @@ func ungetwc(c uint32, f *Struct__IO_FILE) uint32 {
 	}
 	if !(f.Rpos != nil) || c == uint32(4294967295) || func() (_cgo_ret int32) {
 		_cgo_addr := &l
-		*_cgo_addr = int32(wcrtomb((*int8)(unsafe.Pointer((*uint8)(unsafe.Pointer(&mbc)))), c, nil))
+		*_cgo_addr = int32(wcrtomb((*int8)(unsafe.Pointer((*uint8)(unsafe.Pointer(&mbc)))), int32(c), nil))
 		return *_cgo_addr
 	}() < int32(0) || uintptr(unsafe.Pointer(f.Rpos)) < uintptr(unsafe.Pointer((*uint8)(unsafe.Pointer(uintptr(unsafe.Pointer((*uint8)(unsafe.Pointer(uintptr(unsafe.Pointer(f.Buf))-uintptr(int32(8))))))+uintptr(l))))) {
 		for {

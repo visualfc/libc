@@ -249,27 +249,27 @@ func _cgos_md5crypt_crypt_md5(key *int8, setting *int8, output *int8) *int8 {
 		return
 	}() = int8('$')
 	for i = uint32(0); i < uint32(5); i++ {
-		p = _cgos_to64_crypt_md5(p, uint32(int32(*(*uint8)(unsafe.Pointer(uintptr(unsafe.Pointer((*uint8)(unsafe.Pointer(&md)))) + uintptr(*(*uint8)(unsafe.Pointer(uintptr(unsafe.Pointer((*uint8)(unsafe.Pointer(&*(*[3]uint8)(unsafe.Pointer(uintptr(unsafe.Pointer((*[3]uint8)(unsafe.Pointer(&_cgos_perm_crypt_md5)))) + uintptr(i)*3)))))) + uintptr(int32(0))))))))<<int32(16)|int32(*(*uint8)(unsafe.Pointer(uintptr(unsafe.Pointer((*uint8)(unsafe.Pointer(&md)))) + uintptr(*(*uint8)(unsafe.Pointer(uintptr(unsafe.Pointer((*uint8)(unsafe.Pointer(&*(*[3]uint8)(unsafe.Pointer(uintptr(unsafe.Pointer((*[3]uint8)(unsafe.Pointer(&_cgos_perm_crypt_md5)))) + uintptr(i)*3)))))) + uintptr(int32(1))))))))<<int32(8)|int32(*(*uint8)(unsafe.Pointer(uintptr(unsafe.Pointer((*uint8)(unsafe.Pointer(&md)))) + uintptr(*(*uint8)(unsafe.Pointer(uintptr(unsafe.Pointer((*uint8)(unsafe.Pointer(&*(*[3]uint8)(unsafe.Pointer(uintptr(unsafe.Pointer((*[3]uint8)(unsafe.Pointer(&_cgos_perm_crypt_md5)))) + uintptr(i)*3)))))) + uintptr(int32(2))))))))), int32(4))
+		p = _cgos_to64_crypt_md5(p, uint32(int32(*(*uint8)(unsafe.Pointer(uintptr(unsafe.Pointer((*uint8)(unsafe.Pointer(&md)))) + uintptr(*(*uint8)(unsafe.Pointer(uintptr(unsafe.Pointer((*uint8)(unsafe.Pointer(&*(*[3]uint8)(unsafe.Pointer(uintptr(unsafe.Pointer((*[3]uint8)(unsafe.Pointer(&_cgos_md5crypt_perm_crypt_md5)))) + uintptr(i)*3)))))) + uintptr(int32(0))))))))<<int32(16)|int32(*(*uint8)(unsafe.Pointer(uintptr(unsafe.Pointer((*uint8)(unsafe.Pointer(&md)))) + uintptr(*(*uint8)(unsafe.Pointer(uintptr(unsafe.Pointer((*uint8)(unsafe.Pointer(&*(*[3]uint8)(unsafe.Pointer(uintptr(unsafe.Pointer((*[3]uint8)(unsafe.Pointer(&_cgos_md5crypt_perm_crypt_md5)))) + uintptr(i)*3)))))) + uintptr(int32(1))))))))<<int32(8)|int32(*(*uint8)(unsafe.Pointer(uintptr(unsafe.Pointer((*uint8)(unsafe.Pointer(&md)))) + uintptr(*(*uint8)(unsafe.Pointer(uintptr(unsafe.Pointer((*uint8)(unsafe.Pointer(&*(*[3]uint8)(unsafe.Pointer(uintptr(unsafe.Pointer((*[3]uint8)(unsafe.Pointer(&_cgos_md5crypt_perm_crypt_md5)))) + uintptr(i)*3)))))) + uintptr(int32(2))))))))), int32(4))
 	}
 	p = _cgos_to64_crypt_md5(p, uint32(*(*uint8)(unsafe.Pointer(uintptr(unsafe.Pointer((*uint8)(unsafe.Pointer(&md)))) + uintptr(int32(11))))), int32(2))
 	*p = int8(0)
 	return output
 }
 
-var _cgos_perm_crypt_md5 [5][3]uint8 = [5][3]uint8{[3]uint8{uint8(0), uint8(6), uint8(12)}, [3]uint8{uint8(1), uint8(7), uint8(13)}, [3]uint8{uint8(2), uint8(8), uint8(14)}, [3]uint8{uint8(3), uint8(9), uint8(15)}, [3]uint8{uint8(4), uint8(10), uint8(5)}}
+var _cgos_md5crypt_perm_crypt_md5 [5][3]uint8 = [5][3]uint8{[3]uint8{uint8(0), uint8(6), uint8(12)}, [3]uint8{uint8(1), uint8(7), uint8(13)}, [3]uint8{uint8(2), uint8(8), uint8(14)}, [3]uint8{uint8(3), uint8(9), uint8(15)}, [3]uint8{uint8(4), uint8(10), uint8(5)}}
 
 func __crypt_md5(key *int8, setting *int8, output *int8) *int8 {
 	var testbuf [64]int8
 	var p *int8
 	var q *int8
 	p = _cgos_md5crypt_crypt_md5(key, setting, output)
-	q = _cgos_md5crypt_crypt_md5((*int8)(unsafe.Pointer(&_cgos_testkey_crypt_md5)), (*int8)(unsafe.Pointer(&_cgos_testsetting_crypt_md5)), (*int8)(unsafe.Pointer(&testbuf)))
-	if !(p != nil) || uintptr(unsafe.Pointer(q)) != uintptr(unsafe.Pointer((*int8)(unsafe.Pointer(&testbuf)))) || Memcmp(unsafe.Pointer((*int8)(unsafe.Pointer(&testbuf))), unsafe.Pointer((*int8)(unsafe.Pointer(&_cgos_testhash_crypt_md5))), 35) != 0 {
+	q = _cgos_md5crypt_crypt_md5((*int8)(unsafe.Pointer(&_cgos___crypt_md5_testkey_crypt_md5)), (*int8)(unsafe.Pointer(&_cgos___crypt_md5_testsetting_crypt_md5)), (*int8)(unsafe.Pointer(&testbuf)))
+	if !(p != nil) || uintptr(unsafe.Pointer(q)) != uintptr(unsafe.Pointer((*int8)(unsafe.Pointer(&testbuf)))) || Memcmp(unsafe.Pointer((*int8)(unsafe.Pointer(&testbuf))), unsafe.Pointer((*int8)(unsafe.Pointer(&_cgos___crypt_md5_testhash_crypt_md5))), 35) != 0 {
 		return (*int8)(unsafe.Pointer(&[2]int8{'*', '\x00'}))
 	}
 	return p
 }
 
-var _cgos_testkey_crypt_md5 [18]int8 = [18]int8{'X', 'y', '0', '1', '@', '#', '\x01', '\x02', -128, '\u007f', -1, '\r', '\n', -127, '\t', ' ', '!', '\x00'}
-var _cgos_testsetting_crypt_md5 [13]int8 = [13]int8{'$', '1', '$', 'a', 'b', 'c', 'd', '0', '1', '2', '3', '$', '\x00'}
-var _cgos_testhash_crypt_md5 [35]int8 = [35]int8{'$', '1', '$', 'a', 'b', 'c', 'd', '0', '1', '2', '3', '$', '9', 'Q', 'c', 'g', '8', 'D', 'y', 'v', 'i', 'e', 'k', 'V', '3', 't', 'D', 'G', 'M', 'Z', 'y', 'n', 'J', '1', '\x00'}
+var _cgos___crypt_md5_testkey_crypt_md5 [18]int8 = [18]int8{'X', 'y', '0', '1', '@', '#', '\x01', '\x02', -128, '\u007f', -1, '\r', '\n', -127, '\t', ' ', '!', '\x00'}
+var _cgos___crypt_md5_testsetting_crypt_md5 [13]int8 = [13]int8{'$', '1', '$', 'a', 'b', 'c', 'd', '0', '1', '2', '3', '$', '\x00'}
+var _cgos___crypt_md5_testhash_crypt_md5 [35]int8 = [35]int8{'$', '1', '$', 'a', 'b', 'c', 'd', '0', '1', '2', '3', '$', '9', 'Q', 'c', 'g', '8', 'D', 'y', 'v', 'i', 'e', 'k', 'V', '3', 't', 'D', 'G', 'M', 'Z', 'y', 'n', 'J', '1', '\x00'}

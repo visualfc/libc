@@ -2,7 +2,7 @@ package libc
 
 import unsafe "unsafe"
 
-func fputws(ws *uint32, f *Struct__IO_FILE) int32 {
+func fputws(ws *int32, f *Struct__IO_FILE) int32 {
 	var buf [1024]uint8
 	var l uint64 = uint64(0)
 	var ploc **Struct___locale_struct = &__pthread_self().Locale
@@ -18,7 +18,7 @@ func fputws(ws *uint32, f *Struct__IO_FILE) int32 {
 	*ploc = f.Locale
 	for ws != nil && func() (_cgo_ret uint64) {
 		_cgo_addr := &l
-		*_cgo_addr = wcsrtombs((*int8)(unsafe.Pointer((*uint8)(unsafe.Pointer(&buf)))), (**uint32)(unsafe.Pointer(&ws)), 1024, nil)
+		*_cgo_addr = wcsrtombs((*int8)(unsafe.Pointer((*uint8)(unsafe.Pointer(&buf)))), (**int32)(unsafe.Pointer(&ws)), 1024, nil)
 		return *_cgo_addr
 	}()+uint64(1) > uint64(1) {
 		if __fwritex((*uint8)(unsafe.Pointer(&buf)), l, f) < l {

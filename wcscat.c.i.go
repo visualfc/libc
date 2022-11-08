@@ -2,7 +2,7 @@ package libc
 
 import unsafe "unsafe"
 
-func wcscat(dest *uint32, src *uint32) *uint32 {
-	wcscpy((*uint32)(unsafe.Pointer(uintptr(unsafe.Pointer(dest))+uintptr(wcslen(dest))*4)), src)
+func Wcscat(dest *int32, src *int32) *int32 {
+	Wcscpy((*int32)(unsafe.Pointer(uintptr(unsafe.Pointer(dest))+uintptr(Wcslen(dest))*4)), src)
 	return dest
 }

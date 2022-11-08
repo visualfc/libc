@@ -22,25 +22,27 @@ func Ioctl(fd int32, req int32, __cgo_args ...interface {
 }) int32 {
 	panic("notimpl")
 }
-func Mblen(*int8, uint64) int32 {
-	panic("notimpl")
-}
-func Mbtowc(*uint32, *int8, uint64) int32 {
-	panic("notimpl")
-}
+
+// func Mblen(*int8, uint64) int32 {
+// 	panic("notimpl")
+// }
+// func Mbtowc(*uint32, *int8, uint64) int32 {
+// 	panic("notimpl")
+// }
 func Pipe2(fd *int32, flag int32) int32 {
 	panic("notimpl")
 }
 func Strtoul(*int8, **int8, int32) uint64 {
 	panic("notimpl")
 }
-func Vfscanf(*Struct__IO_FILE, *int8, []interface {
-}) int32 {
-	panic("notimpl")
-}
-func Wctomb(*int8, uint32) int32 {
-	panic("notimpl")
-}
+
+// func Vfscanf(*Struct__IO_FILE, *int8, []interface {
+// }) int32 {
+// 	panic("notimpl")
+// }
+// func Wctomb(*int8, uint32) int32 {
+// 	panic("notimpl")
+// }
 func X_Exit(int32) {
 	panic("notimpl")
 }
@@ -102,9 +104,10 @@ func kill(int32, int32) int32 {
 func lstat(*int8, *struct_stat) int32 {
 	panic("notimpl")
 }
-func mbrtowc(*uint32, *int8, uint64, *Struct___mbstate_t) uint64 {
-	panic("notimpl")
-}
+
+// func mbrtowc(*uint32, *int8, uint64, *Struct___mbstate_t) uint64 {
+// 	panic("notimpl")
+// }
 func open(*int8, int32, ...interface {
 }) int32 {
 	panic("notimpl")
@@ -136,20 +139,22 @@ func tcsetattr(int32, int32, *struct_termios) int32 {
 func uname(*struct_utsname) int32 {
 	panic("notimpl")
 }
-func vfwprintf(*Struct__IO_FILE, *uint32, []interface {
-}) int32 {
-	panic("notimpl")
-}
-func vfwscanf(*Struct__IO_FILE, *uint32, []interface {
-}) int32 {
-	panic("notimpl")
-}
+
+// func vfwprintf(*Struct__IO_FILE, *uint32, []interface {
+// }) int32 {
+// 	panic("notimpl")
+// }
+// func vfwscanf(*Struct__IO_FILE, *uint32, []interface {
+// }) int32 {
+// 	panic("notimpl")
+// }
 func waitpid(int32, *int32, int32) int32 {
 	panic("notimpl")
 }
-func wcrtomb(*int8, uint32, *Struct___mbstate_t) uint64 {
-	panic("notimpl")
-}
-func wcsrtombs(*int8, **uint32, uint64, *Struct___mbstate_t) uint64 {
-	panic("notimpl")
-}
+
+// func wcrtomb(*int8, uint32, *Struct___mbstate_t) uint64 {
+// 	panic("notimpl")
+// }
+// func wcsrtombs(*int8, **uint32, uint64, *Struct___mbstate_t) uint64 {
+// 	panic("notimpl")
+// }

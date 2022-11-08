@@ -53,16 +53,16 @@ func Sqrt(x float64) float64 {
 	r = uint64(uint32(*(*uint16)(unsafe.Pointer(uintptr(unsafe.Pointer((*uint16)(unsafe.Pointer(&__rsqrt_tab)))) + uintptr(i)*2))) << int32(16))
 	s = uint64(_cgos_mul32_sqrt(uint32(m>>int32(32)), uint32(r)))
 	d = uint64(_cgos_mul32_sqrt(uint32(s), uint32(r)))
-	u = _cgos_three_sqrt - d
+	u = _cgos_sqrt_three_sqrt - d
 	r = uint64(_cgos_mul32_sqrt(uint32(r), uint32(u)) << int32(1))
 	s = uint64(_cgos_mul32_sqrt(uint32(s), uint32(u)) << int32(1))
 	d = uint64(_cgos_mul32_sqrt(uint32(s), uint32(r)))
-	u = _cgos_three_sqrt - d
+	u = _cgos_sqrt_three_sqrt - d
 	r = uint64(_cgos_mul32_sqrt(uint32(r), uint32(u)) << int32(1))
 	r = r << int32(32)
 	s = _cgos_mul64_sqrt(m, r)
 	d = _cgos_mul64_sqrt(s, r)
-	u = _cgos_three_sqrt<<int32(32) - d
+	u = _cgos_sqrt_three_sqrt<<int32(32) - d
 	s = _cgos_mul64_sqrt(s, u)
 	s = (s - uint64(2)) >> int32(9)
 	var d0 uint64
@@ -105,7 +105,7 @@ type _cgoz_19_sqrt struct {
 	_f float64
 }
 
-var _cgos_three_sqrt uint64 = uint64(3221225472)
+var _cgos_sqrt_three_sqrt uint64 = uint64(3221225472)
 
 type _cgoz_20_sqrt struct {
 	_i uint64

@@ -3,7 +3,7 @@ package libc
 import unsafe "unsafe"
 
 func _cgos___fgetwc_unlocked_internal_fgetwc(f *Struct__IO_FILE) uint32 {
-	var wc uint32
+	var wc int32
 	var c int32
 	var l uint64
 	if uintptr(unsafe.Pointer(f.Rpos)) != uintptr(unsafe.Pointer(f.Rend)) {
@@ -16,7 +16,7 @@ func _cgos___fgetwc_unlocked_internal_fgetwc(f *Struct__IO_FILE) uint32 {
 					return 0
 				}
 			}())
-			return wc
+			return uint32(wc)
 		}
 	}
 	var st Struct___mbstate_t = Struct___mbstate_t{uint32(0), 0}
@@ -59,7 +59,7 @@ func _cgos___fgetwc_unlocked_internal_fgetwc(f *Struct__IO_FILE) uint32 {
 			break
 		}
 	}
-	return wc
+	return uint32(wc)
 }
 func __fgetwc_unlocked(f *Struct__IO_FILE) uint32 {
 	var ploc **Struct___locale_struct = &__pthread_self().Locale
@@ -68,9 +68,9 @@ func __fgetwc_unlocked(f *Struct__IO_FILE) uint32 {
 		fwide(f, int32(1))
 	}
 	*ploc = f.Locale
-	var wc uint32 = _cgos___fgetwc_unlocked_internal_fgetwc(f)
+	var wc int32 = int32(_cgos___fgetwc_unlocked_internal_fgetwc(f))
 	*ploc = loc
-	return wc
+	return uint32(wc)
 }
 func fgetwc(f *Struct__IO_FILE) uint32 {
 	var c uint32

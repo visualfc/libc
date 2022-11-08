@@ -27,7 +27,7 @@ func A64l(s *int8) int64 {
 func L64a(x0 int64) *int8 {
 	var p *int8
 	var x uint32 = uint32(x0)
-	for p = (*int8)(unsafe.Pointer(&_cgos_s_a64l)); x != 0; func() uint32 {
+	for p = (*int8)(unsafe.Pointer(&_cgos_l64a_s_a64l)); x != 0; func() uint32 {
 		*(*uintptr)(unsafe.Pointer(&p))++
 		return func() (_cgo_ret uint32) {
 			_cgo_addr := &x
@@ -38,7 +38,7 @@ func L64a(x0 int64) *int8 {
 		*p = *(*int8)(unsafe.Pointer(uintptr(unsafe.Pointer((*int8)(unsafe.Pointer(&_cgos_digits_a64l)))) + uintptr(x&uint32(63))))
 	}
 	*p = int8(0)
-	return (*int8)(unsafe.Pointer(&_cgos_s_a64l))
+	return (*int8)(unsafe.Pointer(&_cgos_l64a_s_a64l))
 }
 
-var _cgos_s_a64l [7]int8
+var _cgos_l64a_s_a64l [7]int8

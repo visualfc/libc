@@ -33,8 +33,8 @@ func __getopt_msg(a *int8, b *int8, c *int8, l uint64) {
 }
 func getopt(argc int32, argv **int8, optstring *int8) int32 {
 	var i int32
-	var c uint32
-	var d uint32
+	var c int32
+	var d int32
 	var k int32
 	var l int32
 	var optchar *int8
@@ -76,7 +76,7 @@ func getopt(argc int32, argv **int8, optstring *int8) int32 {
 		return *_cgo_addr
 	}() < int32(0) {
 		k = int32(1)
-		c = uint32(65533)
+		c = int32(65533)
 	}
 	optchar = (*int8)(unsafe.Pointer(uintptr(unsafe.Pointer(*(**int8)(unsafe.Pointer(uintptr(unsafe.Pointer(argv)) + uintptr(optind)*8)))) + uintptr(__optpos)))
 	__optpos += k
@@ -88,7 +88,7 @@ func getopt(argc int32, argv **int8, optstring *int8) int32 {
 		*(*uintptr)(unsafe.Pointer(&optstring))++
 	}
 	i = int32(0)
-	d = uint32(0)
+	d = int32(0)
 	for {
 		l = Mbtowc(&d, (*int8)(unsafe.Pointer(uintptr(unsafe.Pointer(optstring))+uintptr(i))), uint64(4))
 		if l > int32(0) {
@@ -100,8 +100,8 @@ func getopt(argc int32, argv **int8, optstring *int8) int32 {
 			break
 		}
 	}
-	if d != c || c == uint32(':') {
-		optopt = int32(c)
+	if d != c || c == ':' {
+		optopt = c
 		if int32(*(*int8)(unsafe.Pointer(uintptr(unsafe.Pointer(optstring)) + uintptr(int32(0))))) != ':' && opterr != 0 {
 			__getopt_msg(*(**int8)(unsafe.Pointer(uintptr(unsafe.Pointer(argv)) + uintptr(int32(0))*8)), (*int8)(unsafe.Pointer(&[24]int8{':', ' ', 'u', 'n', 'r', 'e', 'c', 'o', 'g', 'n', 'i', 'z', 'e', 'd', ' ', 'o', 'p', 't', 'i', 'o', 'n', ':', ' ', '\x00'})), optchar, uint64(k))
 		}
@@ -119,7 +119,7 @@ func getopt(argc int32, argv **int8, optstring *int8) int32 {
 			__optpos = int32(0)
 		}
 		if optind > argc {
-			optopt = int32(c)
+			optopt = c
 			if int32(*(*int8)(unsafe.Pointer(uintptr(unsafe.Pointer(optstring)) + uintptr(int32(0))))) == ':' {
 				return int32(':')
 			}
@@ -129,5 +129,5 @@ func getopt(argc int32, argv **int8, optstring *int8) int32 {
 			return int32('?')
 		}
 	}
-	return int32(c)
+	return c
 }

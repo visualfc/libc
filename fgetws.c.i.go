@@ -2,8 +2,8 @@ package libc
 
 import unsafe "unsafe"
 
-func fgetws(s *uint32, n int32, f *Struct__IO_FILE) *uint32 {
-	var p *uint32 = s
+func fgetws(s *int32, n int32, f *Struct__IO_FILE) *int32 {
+	var p *int32 = s
 	if !(func() (_cgo_ret int32) {
 		_cgo_addr := &n
 		_cgo_ret = *_cgo_addr
@@ -25,17 +25,17 @@ func fgetws(s *uint32, n int32, f *Struct__IO_FILE) *uint32 {
 		if c == uint32(4294967295) {
 			break
 		}
-		*func() (_cgo_ret *uint32) {
+		*func() (_cgo_ret *int32) {
 			_cgo_addr := &p
 			_cgo_ret = *_cgo_addr
 			*(*uintptr)(unsafe.Pointer(_cgo_addr)) += 4
 			return
-		}() = c
+		}() = int32(c)
 		if c == uint32('\n') {
 			break
 		}
 	}
-	*p = uint32(0)
+	*p = int32(0)
 	if f.Flags&uint32(32) != 0 || *X__errno_location() == int32(84) {
 		p = s
 	}
@@ -47,7 +47,7 @@ func fgetws(s *uint32, n int32, f *Struct__IO_FILE) *uint32 {
 			break
 		}
 	}
-	return func() *uint32 {
+	return func() *int32 {
 		if uintptr(unsafe.Pointer(p)) == uintptr(unsafe.Pointer(s)) {
 			return nil
 		} else {

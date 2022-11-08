@@ -13,7 +13,7 @@
 
 #ifndef __cplusplus
 #if defined(__NEED_wchar_t) && !defined(__DEFINED_wchar_t)
-typedef unsigned wchar_t;
+typedef int wchar_t;
 #define __DEFINED_wchar_t
 #endif
 

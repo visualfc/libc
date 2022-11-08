@@ -1,5 +1,5 @@
 package libc
 
-func wcsncasecmp_l(l *uint32, r *uint32, n uint64, locale *Struct___locale_struct) int32 {
-	return wcsncasecmp(l, r, n)
+func Wcsncasecmp_l(l *int32, r *int32, n uint64, locale *Struct___locale_struct) int32 {
+	return Wcsncasecmp(l, r, n)
 }

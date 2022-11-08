@@ -2,7 +2,7 @@ package libc
 
 import unsafe "unsafe"
 
-func wcswidth(wcs *uint32, n uint64) int32 {
+func Wcswidth(wcs *int32, n uint64) int32 {
 	var l int32 = int32(0)
 	var k int32 = int32(0)
 	for ; func() (_cgo_ret uint64) {
@@ -14,9 +14,9 @@ func wcswidth(wcs *uint32, n uint64) int32 {
 		_cgo_addr := &k
 		*_cgo_addr = wcwidth(*wcs)
 		return *_cgo_addr
-	}() >= int32(0); func() *uint32 {
+	}() >= int32(0); func() *int32 {
 		l += k
-		return func() (_cgo_ret *uint32) {
+		return func() (_cgo_ret *int32) {
 			_cgo_addr := &wcs
 			_cgo_ret = *_cgo_addr
 			*(*uintptr)(unsafe.Pointer(_cgo_addr)) += 4

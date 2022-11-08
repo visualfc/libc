@@ -1,6 +1,8 @@
 package libc
 
-import unsafe "unsafe"
+import (
+	unsafe "unsafe"
+)
 
 func fwide(f *Struct__IO_FILE, mode int32) int32 {
 	var __need_unlock int32 = func() int32 {

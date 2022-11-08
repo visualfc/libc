@@ -1,6 +1,6 @@
 package libc
 
-func wscanf(fmt *uint32, __cgo_args ...interface {
+func wscanf(fmt *int32, __cgo_args ...interface {
 }) int32 {
 	var ret int32
 	var ap []interface {

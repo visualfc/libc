@@ -2,6 +2,6 @@ package libc
 
 import unsafe "unsafe"
 
-func wcpncpy(d *uint32, s *uint32, n uint64) *uint32 {
-	return (*uint32)(unsafe.Pointer(uintptr(unsafe.Pointer(wcsncpy(d, s, n))) + uintptr(wcsnlen(s, n))*4))
+func wcpncpy(d *int32, s *int32, n uint64) *int32 {
+	return (*int32)(unsafe.Pointer(uintptr(unsafe.Pointer(Wcsncpy(d, s, n))) + uintptr(Wcsnlen(s, n))*4))
 }

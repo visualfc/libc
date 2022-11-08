@@ -273,27 +273,27 @@ func _cgos_sha256crypt_crypt_sha256(key *int8, setting *int8, output *int8) *int
 	p = output
 	*(*uintptr)(unsafe.Pointer(&p)) += uintptr(Sprintf(p, (*int8)(unsafe.Pointer(&[11]int8{'$', '5', '$', '%', 's', '%', '.', '*', 's', '$', '\x00'})), (*int8)(unsafe.Pointer(&rounds)), slen, salt))
 	for i = uint32(0); i < uint32(10); i++ {
-		p = _cgos_to64_crypt_sha256(p, uint32(int32(*(*uint8)(unsafe.Pointer(uintptr(unsafe.Pointer((*uint8)(unsafe.Pointer(&md)))) + uintptr(*(*uint8)(unsafe.Pointer(uintptr(unsafe.Pointer((*uint8)(unsafe.Pointer(&*(*[3]uint8)(unsafe.Pointer(uintptr(unsafe.Pointer((*[3]uint8)(unsafe.Pointer(&_cgos_perm_crypt_sha256)))) + uintptr(i)*3)))))) + uintptr(int32(0))))))))<<int32(16)|int32(*(*uint8)(unsafe.Pointer(uintptr(unsafe.Pointer((*uint8)(unsafe.Pointer(&md)))) + uintptr(*(*uint8)(unsafe.Pointer(uintptr(unsafe.Pointer((*uint8)(unsafe.Pointer(&*(*[3]uint8)(unsafe.Pointer(uintptr(unsafe.Pointer((*[3]uint8)(unsafe.Pointer(&_cgos_perm_crypt_sha256)))) + uintptr(i)*3)))))) + uintptr(int32(1))))))))<<int32(8)|int32(*(*uint8)(unsafe.Pointer(uintptr(unsafe.Pointer((*uint8)(unsafe.Pointer(&md)))) + uintptr(*(*uint8)(unsafe.Pointer(uintptr(unsafe.Pointer((*uint8)(unsafe.Pointer(&*(*[3]uint8)(unsafe.Pointer(uintptr(unsafe.Pointer((*[3]uint8)(unsafe.Pointer(&_cgos_perm_crypt_sha256)))) + uintptr(i)*3)))))) + uintptr(int32(2))))))))), int32(4))
+		p = _cgos_to64_crypt_sha256(p, uint32(int32(*(*uint8)(unsafe.Pointer(uintptr(unsafe.Pointer((*uint8)(unsafe.Pointer(&md)))) + uintptr(*(*uint8)(unsafe.Pointer(uintptr(unsafe.Pointer((*uint8)(unsafe.Pointer(&*(*[3]uint8)(unsafe.Pointer(uintptr(unsafe.Pointer((*[3]uint8)(unsafe.Pointer(&_cgos_sha256crypt_perm_crypt_sha256)))) + uintptr(i)*3)))))) + uintptr(int32(0))))))))<<int32(16)|int32(*(*uint8)(unsafe.Pointer(uintptr(unsafe.Pointer((*uint8)(unsafe.Pointer(&md)))) + uintptr(*(*uint8)(unsafe.Pointer(uintptr(unsafe.Pointer((*uint8)(unsafe.Pointer(&*(*[3]uint8)(unsafe.Pointer(uintptr(unsafe.Pointer((*[3]uint8)(unsafe.Pointer(&_cgos_sha256crypt_perm_crypt_sha256)))) + uintptr(i)*3)))))) + uintptr(int32(1))))))))<<int32(8)|int32(*(*uint8)(unsafe.Pointer(uintptr(unsafe.Pointer((*uint8)(unsafe.Pointer(&md)))) + uintptr(*(*uint8)(unsafe.Pointer(uintptr(unsafe.Pointer((*uint8)(unsafe.Pointer(&*(*[3]uint8)(unsafe.Pointer(uintptr(unsafe.Pointer((*[3]uint8)(unsafe.Pointer(&_cgos_sha256crypt_perm_crypt_sha256)))) + uintptr(i)*3)))))) + uintptr(int32(2))))))))), int32(4))
 	}
 	p = _cgos_to64_crypt_sha256(p, uint32(int32(*(*uint8)(unsafe.Pointer(uintptr(unsafe.Pointer((*uint8)(unsafe.Pointer(&md)))) + uintptr(int32(31)))))<<int32(8)|int32(*(*uint8)(unsafe.Pointer(uintptr(unsafe.Pointer((*uint8)(unsafe.Pointer(&md)))) + uintptr(int32(30)))))), int32(3))
 	*p = int8(0)
 	return output
 }
 
-var _cgos_perm_crypt_sha256 [10][3]uint8 = [10][3]uint8{[3]uint8{uint8(0), uint8(10), uint8(20)}, [3]uint8{uint8(21), uint8(1), uint8(11)}, [3]uint8{uint8(12), uint8(22), uint8(2)}, [3]uint8{uint8(3), uint8(13), uint8(23)}, [3]uint8{uint8(24), uint8(4), uint8(14)}, [3]uint8{uint8(15), uint8(25), uint8(5)}, [3]uint8{uint8(6), uint8(16), uint8(26)}, [3]uint8{uint8(27), uint8(7), uint8(17)}, [3]uint8{uint8(18), uint8(28), uint8(8)}, [3]uint8{uint8(9), uint8(19), uint8(29)}}
+var _cgos_sha256crypt_perm_crypt_sha256 [10][3]uint8 = [10][3]uint8{[3]uint8{uint8(0), uint8(10), uint8(20)}, [3]uint8{uint8(21), uint8(1), uint8(11)}, [3]uint8{uint8(12), uint8(22), uint8(2)}, [3]uint8{uint8(3), uint8(13), uint8(23)}, [3]uint8{uint8(24), uint8(4), uint8(14)}, [3]uint8{uint8(15), uint8(25), uint8(5)}, [3]uint8{uint8(6), uint8(16), uint8(26)}, [3]uint8{uint8(27), uint8(7), uint8(17)}, [3]uint8{uint8(18), uint8(28), uint8(8)}, [3]uint8{uint8(9), uint8(19), uint8(29)}}
 
 func __crypt_sha256(key *int8, setting *int8, output *int8) *int8 {
 	var testbuf [128]int8
 	var p *int8
 	var q *int8
 	p = _cgos_sha256crypt_crypt_sha256(key, setting, output)
-	q = _cgos_sha256crypt_crypt_sha256((*int8)(unsafe.Pointer(&_cgos_testkey_crypt_sha256)), (*int8)(unsafe.Pointer(&_cgos_testsetting_crypt_sha256)), (*int8)(unsafe.Pointer(&testbuf)))
-	if !(p != nil) || uintptr(unsafe.Pointer(q)) != uintptr(unsafe.Pointer((*int8)(unsafe.Pointer(&testbuf)))) || Memcmp(unsafe.Pointer((*int8)(unsafe.Pointer(&testbuf))), unsafe.Pointer((*int8)(unsafe.Pointer(&_cgos_testhash_crypt_sha256))), 73) != 0 {
+	q = _cgos_sha256crypt_crypt_sha256((*int8)(unsafe.Pointer(&_cgos___crypt_sha256_testkey_crypt_sha256)), (*int8)(unsafe.Pointer(&_cgos___crypt_sha256_testsetting_crypt_sha256)), (*int8)(unsafe.Pointer(&testbuf)))
+	if !(p != nil) || uintptr(unsafe.Pointer(q)) != uintptr(unsafe.Pointer((*int8)(unsafe.Pointer(&testbuf)))) || Memcmp(unsafe.Pointer((*int8)(unsafe.Pointer(&testbuf))), unsafe.Pointer((*int8)(unsafe.Pointer(&_cgos___crypt_sha256_testhash_crypt_sha256))), 73) != 0 {
 		return (*int8)(unsafe.Pointer(&[2]int8{'*', '\x00'}))
 	}
 	return p
 }
 
-var _cgos_testkey_crypt_sha256 [18]int8 = [18]int8{'X', 'y', '0', '1', '@', '#', '\x01', '\x02', -128, '\u007f', -1, '\r', '\n', -127, '\t', ' ', '!', '\x00'}
-var _cgos_testsetting_crypt_sha256 [30]int8 = [30]int8{'$', '5', '$', 'r', 'o', 'u', 'n', 'd', 's', '=', '1', '2', '3', '4', '$', 'a', 'b', 'c', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '$', '\x00'}
-var _cgos_testhash_crypt_sha256 [73]int8 = [73]int8{'$', '5', '$', 'r', 'o', 'u', 'n', 'd', 's', '=', '1', '2', '3', '4', '$', 'a', 'b', 'c', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '$', '3', 'V', 'f', 'D', 'j', 'P', 't', '0', '5', 'V', 'H', 'F', 'n', '4', '7', 'C', '/', 'o', 'j', 'F', 'Z', '6', 'K', 'R', 'P', 'Y', 'r', 'O', 'j', 'j', '1', 'l', 'L', 'b', 'H', '.', 'd', 'k', 'F', '3', 'b', 'Z', '6', '\x00'}
+var _cgos___crypt_sha256_testkey_crypt_sha256 [18]int8 = [18]int8{'X', 'y', '0', '1', '@', '#', '\x01', '\x02', -128, '\u007f', -1, '\r', '\n', -127, '\t', ' ', '!', '\x00'}
+var _cgos___crypt_sha256_testsetting_crypt_sha256 [30]int8 = [30]int8{'$', '5', '$', 'r', 'o', 'u', 'n', 'd', 's', '=', '1', '2', '3', '4', '$', 'a', 'b', 'c', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '$', '\x00'}
+var _cgos___crypt_sha256_testhash_crypt_sha256 [73]int8 = [73]int8{'$', '5', '$', 'r', 'o', 'u', 'n', 'd', 's', '=', '1', '2', '3', '4', '$', 'a', 'b', 'c', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '$', '3', 'V', 'f', 'D', 'j', 'P', 't', '0', '5', 'V', 'H', 'F', 'n', '4', '7', 'C', '/', 'o', 'j', 'F', 'Z', '6', 'K', 'R', 'P', 'Y', 'r', 'O', 'j', 'j', '1', 'l', 'L', 'b', 'H', '.', 'd', 'k', 'F', '3', 'b', 'Z', '6', '\x00'}

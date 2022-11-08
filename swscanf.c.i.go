@@ -1,6 +1,6 @@
 package libc
 
-func swscanf(s *uint32, fmt *uint32, __cgo_args ...interface {
+func swscanf(s *int32, fmt *int32, __cgo_args ...interface {
 }) int32 {
 	var ret int32
 	var ap []interface {

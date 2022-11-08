@@ -3,37 +3,37 @@ package libc
 import unsafe "unsafe"
 
 func __env_rm_add(old *int8, new *int8) {
-	for i := uint64(uint64(0)); i < _cgos_env_alloced_n_setenv; i++ {
-		if uintptr(unsafe.Pointer(*(**int8)(unsafe.Pointer(uintptr(unsafe.Pointer(_cgos_env_alloced_setenv)) + uintptr(i)*8)))) == uintptr(unsafe.Pointer(old)) {
-			*(**int8)(unsafe.Pointer(uintptr(unsafe.Pointer(_cgos_env_alloced_setenv)) + uintptr(i)*8)) = new
+	for i := uint64(uint64(0)); i < _cgos___env_rm_add_env_alloced_n_setenv; i++ {
+		if uintptr(unsafe.Pointer(*(**int8)(unsafe.Pointer(uintptr(unsafe.Pointer(_cgos___env_rm_add_env_alloced_setenv)) + uintptr(i)*8)))) == uintptr(unsafe.Pointer(old)) {
+			*(**int8)(unsafe.Pointer(uintptr(unsafe.Pointer(_cgos___env_rm_add_env_alloced_setenv)) + uintptr(i)*8)) = new
 			Free(unsafe.Pointer(old))
 			return
-		} else if !(*(**int8)(unsafe.Pointer(uintptr(unsafe.Pointer(_cgos_env_alloced_setenv)) + uintptr(i)*8)) != nil) && new != nil {
-			*(**int8)(unsafe.Pointer(uintptr(unsafe.Pointer(_cgos_env_alloced_setenv)) + uintptr(i)*8)) = new
+		} else if !(*(**int8)(unsafe.Pointer(uintptr(unsafe.Pointer(_cgos___env_rm_add_env_alloced_setenv)) + uintptr(i)*8)) != nil) && new != nil {
+			*(**int8)(unsafe.Pointer(uintptr(unsafe.Pointer(_cgos___env_rm_add_env_alloced_setenv)) + uintptr(i)*8)) = new
 			new = (*int8)(nil)
 		}
 	}
 	if !(new != nil) {
 		return
 	}
-	var t **int8 = (**int8)(Realloc(unsafe.Pointer(_cgos_env_alloced_setenv), 8*(_cgos_env_alloced_n_setenv+uint64(1))))
+	var t **int8 = (**int8)(Realloc(unsafe.Pointer(_cgos___env_rm_add_env_alloced_setenv), 8*(_cgos___env_rm_add_env_alloced_n_setenv+uint64(1))))
 	if !(t != nil) {
 		return
 	}
 	*(**int8)(unsafe.Pointer(uintptr(unsafe.Pointer(func() (_cgo_ret **int8) {
-		_cgo_addr := &_cgos_env_alloced_setenv
+		_cgo_addr := &_cgos___env_rm_add_env_alloced_setenv
 		*_cgo_addr = t
 		return *_cgo_addr
 	}())) + uintptr(func() (_cgo_ret uint64) {
-		_cgo_addr := &_cgos_env_alloced_n_setenv
+		_cgo_addr := &_cgos___env_rm_add_env_alloced_n_setenv
 		_cgo_ret = *_cgo_addr
 		*_cgo_addr++
 		return
 	}())*8)) = new
 }
 
-var _cgos_env_alloced_setenv **int8
-var _cgos_env_alloced_n_setenv uint64
+var _cgos___env_rm_add_env_alloced_setenv **int8
+var _cgos___env_rm_add_env_alloced_n_setenv uint64
 
 func Setenv(var_ *int8, value *int8, overwrite int32) int32 {
 	var s *int8

@@ -1,6 +1,6 @@
 package libc
 
-func swprintf(s *uint32, n uint64, fmt *uint32, __cgo_args ...interface {
+func Swprintf(s *int32, n uint64, fmt *int32, __cgo_args ...interface {
 }) int32 {
 	var ret int32
 	var ap []interface {

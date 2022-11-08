@@ -45,7 +45,7 @@ func Sqrtf(x float32) float32 {
 	ey = ix >> int32(1)
 	ey += uint32(532676608)
 	ey &= uint32(2139095040)
-	const _cgos_three_sqrtf uint32 = uint32(3221225472)
+	const _cgos_sqrtf_three_sqrtf uint32 = uint32(3221225472)
 	var r uint32
 	var s uint32
 	var d uint32
@@ -55,11 +55,11 @@ func Sqrtf(x float32) float32 {
 	r = uint32(*(*uint16)(unsafe.Pointer(uintptr(unsafe.Pointer((*uint16)(unsafe.Pointer(&__rsqrt_tab)))) + uintptr(i)*2))) << int32(16)
 	s = _cgos_mul32_sqrtf(m, r)
 	d = _cgos_mul32_sqrtf(s, r)
-	u = _cgos_three_sqrtf - d
+	u = _cgos_sqrtf_three_sqrtf - d
 	r = _cgos_mul32_sqrtf(r, u) << int32(1)
 	s = _cgos_mul32_sqrtf(s, u) << int32(1)
 	d = _cgos_mul32_sqrtf(s, r)
-	u = _cgos_three_sqrtf - d
+	u = _cgos_sqrtf_three_sqrtf - d
 	s = _cgos_mul32_sqrtf(s, u)
 	s = (s - uint32(1)) >> int32(6)
 	var d0 uint32

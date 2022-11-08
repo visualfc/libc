@@ -57,10 +57,10 @@ func getmntent_r(f *Struct__IO_FILE, mnt *struct_mntent, linebuf *int8, buflen i
 	return mnt
 }
 func getmntent(f *Struct__IO_FILE) *struct_mntent {
-	return getmntent_r(f, &_cgos_mnt_mntent, (*int8)(unsafe.Pointer(&_cgos_internal_buf_mntent)), int32(0))
+	return getmntent_r(f, &_cgos_getmntent_mnt_mntent, (*int8)(unsafe.Pointer(&_cgos_internal_buf_mntent)), int32(0))
 }
 
-var _cgos_mnt_mntent struct_mntent
+var _cgos_getmntent_mnt_mntent struct_mntent
 
 func addmntent(f *Struct__IO_FILE, mnt *struct_mntent) int32 {
 	if Fseek(f, int64(0), int32(2)) != 0 {

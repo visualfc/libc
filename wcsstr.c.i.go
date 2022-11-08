@@ -2,8 +2,8 @@ package libc
 
 import unsafe "unsafe"
 
-func _cgos_twoway_wcsstr_wcsstr(h *uint32, n *uint32) *uint32 {
-	var z *uint32
+func _cgos_twoway_wcsstr_wcsstr(h *int32, n *int32) *int32 {
+	var z *int32
 	var l uint64
 	var ip uint64
 	var jp uint64
@@ -13,10 +13,10 @@ func _cgos_twoway_wcsstr_wcsstr(h *uint32, n *uint32) *uint32 {
 	var p0 uint64
 	var mem uint64
 	var mem0 uint64
-	for l = uint64(0); *(*uint32)(unsafe.Pointer(uintptr(unsafe.Pointer(n)) + uintptr(l)*4)) != 0 && *(*uint32)(unsafe.Pointer(uintptr(unsafe.Pointer(h)) + uintptr(l)*4)) != 0; l++ {
+	for l = uint64(0); *(*int32)(unsafe.Pointer(uintptr(unsafe.Pointer(n)) + uintptr(l)*4)) != 0 && *(*int32)(unsafe.Pointer(uintptr(unsafe.Pointer(h)) + uintptr(l)*4)) != 0; l++ {
 	}
-	if *(*uint32)(unsafe.Pointer(uintptr(unsafe.Pointer(n)) + uintptr(l)*4)) != 0 {
-		return (*uint32)(nil)
+	if *(*int32)(unsafe.Pointer(uintptr(unsafe.Pointer(n)) + uintptr(l)*4)) != 0 {
+		return (*int32)(nil)
 	}
 	ip = uint64(18446744073709551615)
 	jp = uint64(0)
@@ -26,14 +26,14 @@ func _cgos_twoway_wcsstr_wcsstr(h *uint32, n *uint32) *uint32 {
 		return *_cgo_addr
 	}()
 	for jp+k < l {
-		if *(*uint32)(unsafe.Pointer(uintptr(unsafe.Pointer(n)) + uintptr(ip+k)*4)) == *(*uint32)(unsafe.Pointer(uintptr(unsafe.Pointer(n)) + uintptr(jp+k)*4)) {
+		if *(*int32)(unsafe.Pointer(uintptr(unsafe.Pointer(n)) + uintptr(ip+k)*4)) == *(*int32)(unsafe.Pointer(uintptr(unsafe.Pointer(n)) + uintptr(jp+k)*4)) {
 			if k == p {
 				jp += p
 				k = uint64(1)
 			} else {
 				k++
 			}
-		} else if *(*uint32)(unsafe.Pointer(uintptr(unsafe.Pointer(n)) + uintptr(ip+k)*4)) > *(*uint32)(unsafe.Pointer(uintptr(unsafe.Pointer(n)) + uintptr(jp+k)*4)) {
+		} else if *(*int32)(unsafe.Pointer(uintptr(unsafe.Pointer(n)) + uintptr(ip+k)*4)) > *(*int32)(unsafe.Pointer(uintptr(unsafe.Pointer(n)) + uintptr(jp+k)*4)) {
 			jp += k
 			k = uint64(1)
 			p = jp - ip
@@ -61,14 +61,14 @@ func _cgos_twoway_wcsstr_wcsstr(h *uint32, n *uint32) *uint32 {
 		return *_cgo_addr
 	}()
 	for jp+k < l {
-		if *(*uint32)(unsafe.Pointer(uintptr(unsafe.Pointer(n)) + uintptr(ip+k)*4)) == *(*uint32)(unsafe.Pointer(uintptr(unsafe.Pointer(n)) + uintptr(jp+k)*4)) {
+		if *(*int32)(unsafe.Pointer(uintptr(unsafe.Pointer(n)) + uintptr(ip+k)*4)) == *(*int32)(unsafe.Pointer(uintptr(unsafe.Pointer(n)) + uintptr(jp+k)*4)) {
 			if k == p {
 				jp += p
 				k = uint64(1)
 			} else {
 				k++
 			}
-		} else if *(*uint32)(unsafe.Pointer(uintptr(unsafe.Pointer(n)) + uintptr(ip+k)*4)) < *(*uint32)(unsafe.Pointer(uintptr(unsafe.Pointer(n)) + uintptr(jp+k)*4)) {
+		} else if *(*int32)(unsafe.Pointer(uintptr(unsafe.Pointer(n)) + uintptr(ip+k)*4)) < *(*int32)(unsafe.Pointer(uintptr(unsafe.Pointer(n)) + uintptr(jp+k)*4)) {
 			jp += k
 			k = uint64(1)
 			p = jp - ip
@@ -91,7 +91,7 @@ func _cgos_twoway_wcsstr_wcsstr(h *uint32, n *uint32) *uint32 {
 	} else {
 		p = p0
 	}
-	if wmemcmp(n, (*uint32)(unsafe.Pointer(uintptr(unsafe.Pointer(n))+uintptr(p)*4)), ms+uint64(1)) != 0 {
+	if wmemcmp(n, (*int32)(unsafe.Pointer(uintptr(unsafe.Pointer(n))+uintptr(p)*4)), ms+uint64(1)) != 0 {
 		mem0 = uint64(0)
 		p = func() uint64 {
 			if ms > l-ms-uint64(1) {
@@ -108,11 +108,11 @@ func _cgos_twoway_wcsstr_wcsstr(h *uint32, n *uint32) *uint32 {
 	for {
 		if uint64((uintptr(unsafe.Pointer(z))-uintptr(unsafe.Pointer(h)))/4) < l {
 			var grow uint64 = l | uint64(63)
-			var z2 *uint32 = wmemchr(z, uint32(0), grow)
+			var z2 *int32 = wmemchr(z, int32(0), grow)
 			if z2 != nil {
 				z = z2
 				if uint64((uintptr(unsafe.Pointer(z))-uintptr(unsafe.Pointer(h)))/4) < l {
-					return (*uint32)(nil)
+					return (*int32)(nil)
 				}
 			} else {
 				*(*uintptr)(unsafe.Pointer(&z)) += uintptr(grow) * 4
@@ -124,36 +124,36 @@ func _cgos_twoway_wcsstr_wcsstr(h *uint32, n *uint32) *uint32 {
 			} else {
 				return mem
 			}
-		}(); *(*uint32)(unsafe.Pointer(uintptr(unsafe.Pointer(n)) + uintptr(k)*4)) != 0 && *(*uint32)(unsafe.Pointer(uintptr(unsafe.Pointer(n)) + uintptr(k)*4)) == *(*uint32)(unsafe.Pointer(uintptr(unsafe.Pointer(h)) + uintptr(k)*4)); k++ {
+		}(); *(*int32)(unsafe.Pointer(uintptr(unsafe.Pointer(n)) + uintptr(k)*4)) != 0 && *(*int32)(unsafe.Pointer(uintptr(unsafe.Pointer(n)) + uintptr(k)*4)) == *(*int32)(unsafe.Pointer(uintptr(unsafe.Pointer(h)) + uintptr(k)*4)); k++ {
 		}
-		if *(*uint32)(unsafe.Pointer(uintptr(unsafe.Pointer(n)) + uintptr(k)*4)) != 0 {
+		if *(*int32)(unsafe.Pointer(uintptr(unsafe.Pointer(n)) + uintptr(k)*4)) != 0 {
 			*(*uintptr)(unsafe.Pointer(&h)) += uintptr(k-ms) * 4
 			mem = uint64(0)
 			continue
 		}
-		for k = ms + uint64(1); k > mem && *(*uint32)(unsafe.Pointer(uintptr(unsafe.Pointer(n)) + uintptr(k-uint64(1))*4)) == *(*uint32)(unsafe.Pointer(uintptr(unsafe.Pointer(h)) + uintptr(k-uint64(1))*4)); k-- {
+		for k = ms + uint64(1); k > mem && *(*int32)(unsafe.Pointer(uintptr(unsafe.Pointer(n)) + uintptr(k-uint64(1))*4)) == *(*int32)(unsafe.Pointer(uintptr(unsafe.Pointer(h)) + uintptr(k-uint64(1))*4)); k-- {
 		}
 		if k <= mem {
-			return (*uint32)(unsafe.Pointer(h))
+			return (*int32)(unsafe.Pointer(h))
 		}
 		*(*uintptr)(unsafe.Pointer(&h)) += uintptr(p) * 4
 		mem = mem0
 	}
 	return nil
 }
-func wcsstr(h *uint32, n *uint32) *uint32 {
-	if !(*(*uint32)(unsafe.Pointer(uintptr(unsafe.Pointer(n)) + uintptr(int32(0))*4)) != 0) {
-		return (*uint32)(unsafe.Pointer(h))
+func Wcsstr(h *int32, n *int32) *int32 {
+	if !(*(*int32)(unsafe.Pointer(uintptr(unsafe.Pointer(n)) + uintptr(int32(0))*4)) != 0) {
+		return (*int32)(unsafe.Pointer(h))
 	}
-	if !(*(*uint32)(unsafe.Pointer(uintptr(unsafe.Pointer(h)) + uintptr(int32(0))*4)) != 0) {
-		return (*uint32)(nil)
+	if !(*(*int32)(unsafe.Pointer(uintptr(unsafe.Pointer(h)) + uintptr(int32(0))*4)) != 0) {
+		return (*int32)(nil)
 	}
-	h = wcschr(h, *n)
-	if !(h != nil) || !(*(*uint32)(unsafe.Pointer(uintptr(unsafe.Pointer(n)) + uintptr(int32(1))*4)) != 0) {
-		return (*uint32)(unsafe.Pointer(h))
+	h = Wcschr(h, *n)
+	if !(h != nil) || !(*(*int32)(unsafe.Pointer(uintptr(unsafe.Pointer(n)) + uintptr(int32(1))*4)) != 0) {
+		return (*int32)(unsafe.Pointer(h))
 	}
-	if !(*(*uint32)(unsafe.Pointer(uintptr(unsafe.Pointer(h)) + uintptr(int32(1))*4)) != 0) {
-		return (*uint32)(nil)
+	if !(*(*int32)(unsafe.Pointer(uintptr(unsafe.Pointer(h)) + uintptr(int32(1))*4)) != 0) {
+		return (*int32)(nil)
 	}
 	return _cgos_twoway_wcsstr_wcsstr(h, n)
 }

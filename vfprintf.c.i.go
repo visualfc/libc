@@ -3,35 +3,35 @@ package libc
 import unsafe "unsafe"
 
 const (
-	BARE     int32 = 0
-	LPRE     int32 = 1
-	LLPRE    int32 = 2
-	HPRE     int32 = 3
-	HHPRE    int32 = 4
-	BIGLPRE  int32 = 5
-	ZTPRE    int32 = 6
-	JPRE     int32 = 7
-	STOP     int32 = 8
-	PTR      int32 = 9
-	INT      int32 = 10
-	UINT     int32 = 11
-	ULLONG   int32 = 12
-	LONG     int32 = 13
-	ULONG    int32 = 14
-	SHORT    int32 = 15
-	USHORT   int32 = 16
-	CHAR     int32 = 17
-	UCHAR    int32 = 18
-	LLONG    int32 = 19
-	SIZET    int32 = 20
-	IMAX     int32 = 21
-	UMAX     int32 = 22
-	PDIFF    int32 = 23
-	UIPTR    int32 = 24
-	DBL      int32 = 25
-	LDBL     int32 = 26
-	NOARG    int32 = 27
-	MAXSTATE int32 = 28
+	_cgoe_BARE_vfprintf     int32 = 0
+	_cgoe_LPRE_vfprintf     int32 = 1
+	_cgoe_LLPRE_vfprintf    int32 = 2
+	_cgoe_HPRE_vfprintf     int32 = 3
+	_cgoe_HHPRE_vfprintf    int32 = 4
+	_cgoe_BIGLPRE_vfprintf  int32 = 5
+	_cgoe_ZTPRE_vfprintf    int32 = 6
+	_cgoe_JPRE_vfprintf     int32 = 7
+	_cgoe_STOP_vfprintf     int32 = 8
+	_cgoe_PTR_vfprintf      int32 = 9
+	_cgoe_INT_vfprintf      int32 = 10
+	_cgoe_UINT_vfprintf     int32 = 11
+	_cgoe_ULLONG_vfprintf   int32 = 12
+	_cgoe_LONG_vfprintf     int32 = 13
+	_cgoe_ULONG_vfprintf    int32 = 14
+	_cgoe_SHORT_vfprintf    int32 = 15
+	_cgoe_USHORT_vfprintf   int32 = 16
+	_cgoe_CHAR_vfprintf     int32 = 17
+	_cgoe_UCHAR_vfprintf    int32 = 18
+	_cgoe_LLONG_vfprintf    int32 = 19
+	_cgoe_SIZET_vfprintf    int32 = 20
+	_cgoe_IMAX_vfprintf     int32 = 21
+	_cgoe_UMAX_vfprintf     int32 = 22
+	_cgoe_PDIFF_vfprintf    int32 = 23
+	_cgoe_UIPTR_vfprintf    int32 = 24
+	_cgoe_DBL_vfprintf      int32 = 25
+	_cgoe_LDBL_vfprintf     int32 = 26
+	_cgoe_NOARG_vfprintf    int32 = 27
+	_cgoe_MAXSTATE_vfprintf int32 = 28
 )
 
 var _cgos_states_vfprintf [8][58]uint8 = [8][58]uint8{[58]uint8{uint8(25), 0, uint8(10), 0, uint8(25), uint8(25), uint8(25), 0, 0, 0, 0, uint8(5), 0, 0, 0, 0, 0, 0, uint8(9), 0, 0, 0, 0, uint8(11), 0, 0, 0, 0, 0, 0, 0, 0, uint8(25), 0, uint8(17), uint8(10), uint8(25), uint8(25), uint8(25), uint8(3), uint8(10), uint8(7), 0, uint8(1), uint8(27), uint8(9), uint8(11), uint8(24), 0, 0, uint8(9), uint8(6), uint8(11), 0, 0, uint8(11), 0, uint8(6)}, [58]uint8{uint8(25), 0, 0, 0, uint8(25), uint8(25), uint8(25), 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, uint8(14), 0, 0, 0, 0, 0, 0, 0, 0, uint8(25), 0, uint8(10), uint8(13), uint8(25), uint8(25), uint8(25), 0, uint8(13), 0, 0, uint8(2), 0, uint8(9), uint8(14), 0, 0, 0, uint8(9), 0, uint8(14), 0, 0, uint8(14)}, [58]uint8{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, uint8(12), 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, uint8(19), 0, 0, 0, 0, uint8(19), 0, 0, 0, 0, uint8(9), uint8(12), 0, 0, 0, 0, 0, uint8(12), 0, 0, uint8(12)}, [58]uint8{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, uint8(16), 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, uint8(15), 0, 0, 0, uint8(4), uint8(15), 0, 0, 0, 0, uint8(9), uint8(16), 0, 0, 0, 0, 0, uint8(16), 0, 0, uint8(16)}, [58]uint8{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, uint8(18), 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, uint8(17), 0, 0, 0, 0, uint8(17), 0, 0, 0, 0, uint8(9), uint8(18), 0, 0, 0, 0, 0, uint8(18), 0, 0, uint8(18)}, [58]uint8{uint8(26), 0, 0, 0, uint8(26), uint8(26), uint8(26), 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, uint8(26), 0, 0, 0, uint8(26), uint8(26), uint8(26), 0, 0, 0, 0, 0, 0, uint8(9)}, [58]uint8{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, uint8(20), 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, uint8(23), 0, 0, 0, 0, uint8(23), 0, 0, 0, 0, uint8(9), uint8(20), 0, 0, 0, 0, 0, uint8(20), 0, 0, uint8(20)}, [58]uint8{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, uint8(22), 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, uint8(21), 0, 0, 0, 0, uint8(21), 0, 0, 0, 0, uint8(9), uint8(22), 0, 0, 0, 0, 0, uint8(22), 0, 0, uint8(22)}}
@@ -43,7 +43,7 @@ type _cgos_arg_vfprintf struct {
 func _cgos_pop_arg_vfprintf(arg *_cgos_arg_vfprintf, type_ int32, ap *[]interface {
 }) {
 	switch type_ {
-	case PTR:
+	case _cgoe_PTR_vfprintf:
 		*(*unsafe.Pointer)(unsafe.Pointer(arg)) = func(__cgo_args []interface {
 		}) (_cgo_ret unsafe.Pointer) {
 			_cgo_ret = unsafe.Pointer((*[2]unsafe.Pointer)(unsafe.Pointer(&__cgo_args[0]))[1])
@@ -51,7 +51,7 @@ func _cgos_pop_arg_vfprintf(arg *_cgos_arg_vfprintf, type_ int32, ap *[]interfac
 			return
 		}(*ap)
 		break
-	case INT:
+	case _cgoe_INT_vfprintf:
 		arg.i = uint64(func(__cgo_args []interface {
 		}) (_cgo_ret int32) {
 			switch _cgo_tag := __cgo_args[0].(type) {
@@ -66,7 +66,7 @@ func _cgos_pop_arg_vfprintf(arg *_cgos_arg_vfprintf, type_ int32, ap *[]interfac
 			return
 		}(*ap))
 		break
-	case UINT:
+	case _cgoe_UINT_vfprintf:
 		arg.i = uint64(func(__cgo_args []interface {
 		}) (_cgo_ret uint32) {
 			switch _cgo_tag := __cgo_args[0].(type) {
@@ -79,7 +79,7 @@ func _cgos_pop_arg_vfprintf(arg *_cgos_arg_vfprintf, type_ int32, ap *[]interfac
 			return
 		}(*ap))
 		break
-	case LONG:
+	case _cgoe_LONG_vfprintf:
 		arg.i = uint64(func(__cgo_args []interface {
 		}) (_cgo_ret int64) {
 			switch _cgo_tag := __cgo_args[0].(type) {
@@ -92,7 +92,7 @@ func _cgos_pop_arg_vfprintf(arg *_cgos_arg_vfprintf, type_ int32, ap *[]interfac
 			return
 		}(*ap))
 		break
-	case ULONG:
+	case _cgoe_ULONG_vfprintf:
 		arg.i = uint64(func(__cgo_args []interface {
 		}) (_cgo_ret uint64) {
 			switch _cgo_tag := __cgo_args[0].(type) {
@@ -105,7 +105,7 @@ func _cgos_pop_arg_vfprintf(arg *_cgos_arg_vfprintf, type_ int32, ap *[]interfac
 			return
 		}(*ap))
 		break
-	case ULLONG:
+	case _cgoe_ULLONG_vfprintf:
 		arg.i = func(__cgo_args []interface {
 		}) (_cgo_ret uint64) {
 			switch _cgo_tag := __cgo_args[0].(type) {
@@ -118,7 +118,7 @@ func _cgos_pop_arg_vfprintf(arg *_cgos_arg_vfprintf, type_ int32, ap *[]interfac
 			return
 		}(*ap)
 		break
-	case SHORT:
+	case _cgoe_SHORT_vfprintf:
 		arg.i = uint64(int16(func(__cgo_args []interface {
 		}) (_cgo_ret int32) {
 			switch _cgo_tag := __cgo_args[0].(type) {
@@ -133,7 +133,7 @@ func _cgos_pop_arg_vfprintf(arg *_cgos_arg_vfprintf, type_ int32, ap *[]interfac
 			return
 		}(*ap)))
 		break
-	case USHORT:
+	case _cgoe_USHORT_vfprintf:
 		arg.i = uint64(uint16(func(__cgo_args []interface {
 		}) (_cgo_ret int32) {
 			switch _cgo_tag := __cgo_args[0].(type) {
@@ -148,7 +148,7 @@ func _cgos_pop_arg_vfprintf(arg *_cgos_arg_vfprintf, type_ int32, ap *[]interfac
 			return
 		}(*ap)))
 		break
-	case CHAR:
+	case _cgoe_CHAR_vfprintf:
 		arg.i = uint64(int8(func(__cgo_args []interface {
 		}) (_cgo_ret int32) {
 			switch _cgo_tag := __cgo_args[0].(type) {
@@ -163,7 +163,7 @@ func _cgos_pop_arg_vfprintf(arg *_cgos_arg_vfprintf, type_ int32, ap *[]interfac
 			return
 		}(*ap)))
 		break
-	case UCHAR:
+	case _cgoe_UCHAR_vfprintf:
 		arg.i = uint64(uint8(func(__cgo_args []interface {
 		}) (_cgo_ret int32) {
 			switch _cgo_tag := __cgo_args[0].(type) {
@@ -178,7 +178,7 @@ func _cgos_pop_arg_vfprintf(arg *_cgos_arg_vfprintf, type_ int32, ap *[]interfac
 			return
 		}(*ap)))
 		break
-	case LLONG:
+	case _cgoe_LLONG_vfprintf:
 		arg.i = uint64(func(__cgo_args []interface {
 		}) (_cgo_ret int64) {
 			switch _cgo_tag := __cgo_args[0].(type) {
@@ -191,7 +191,7 @@ func _cgos_pop_arg_vfprintf(arg *_cgos_arg_vfprintf, type_ int32, ap *[]interfac
 			return
 		}(*ap))
 		break
-	case SIZET:
+	case _cgoe_SIZET_vfprintf:
 		arg.i = uint64(func(__cgo_args []interface {
 		}) (_cgo_ret uint64) {
 			switch _cgo_tag := __cgo_args[0].(type) {
@@ -204,7 +204,7 @@ func _cgos_pop_arg_vfprintf(arg *_cgos_arg_vfprintf, type_ int32, ap *[]interfac
 			return
 		}(*ap))
 		break
-	case IMAX:
+	case _cgoe_IMAX_vfprintf:
 		arg.i = uint64(func(__cgo_args []interface {
 		}) (_cgo_ret int64) {
 			switch _cgo_tag := __cgo_args[0].(type) {
@@ -217,7 +217,7 @@ func _cgos_pop_arg_vfprintf(arg *_cgos_arg_vfprintf, type_ int32, ap *[]interfac
 			return
 		}(*ap))
 		break
-	case UMAX:
+	case _cgoe_UMAX_vfprintf:
 		arg.i = func(__cgo_args []interface {
 		}) (_cgo_ret uint64) {
 			switch _cgo_tag := __cgo_args[0].(type) {
@@ -230,7 +230,7 @@ func _cgos_pop_arg_vfprintf(arg *_cgos_arg_vfprintf, type_ int32, ap *[]interfac
 			return
 		}(*ap)
 		break
-	case PDIFF:
+	case _cgoe_PDIFF_vfprintf:
 		arg.i = uint64(func(__cgo_args []interface {
 		}) (_cgo_ret int64) {
 			switch _cgo_tag := __cgo_args[0].(type) {
@@ -243,7 +243,7 @@ func _cgos_pop_arg_vfprintf(arg *_cgos_arg_vfprintf, type_ int32, ap *[]interfac
 			return
 		}(*ap))
 		break
-	case UIPTR:
+	case _cgoe_UIPTR_vfprintf:
 		arg.i = uint64(uint64(uintptr(func(__cgo_args []interface {
 		}) (_cgo_ret unsafe.Pointer) {
 			_cgo_ret = unsafe.Pointer((*[2]unsafe.Pointer)(unsafe.Pointer(&__cgo_args[0]))[1])
@@ -251,7 +251,7 @@ func _cgos_pop_arg_vfprintf(arg *_cgos_arg_vfprintf, type_ int32, ap *[]interfac
 			return
 		}(*ap))))
 		break
-	case DBL:
+	case _cgoe_DBL_vfprintf:
 		*(*float64)(unsafe.Pointer(arg)) = float64(func(__cgo_args []interface {
 		}) (_cgo_ret float64) {
 			_cgo_ret = __cgo_args[0].(float64)
@@ -259,7 +259,7 @@ func _cgos_pop_arg_vfprintf(arg *_cgos_arg_vfprintf, type_ int32, ap *[]interfac
 			return
 		}(*ap))
 		break
-	case LDBL:
+	case _cgoe_LDBL_vfprintf:
 		*(*float64)(unsafe.Pointer(arg)) = func(__cgo_args []interface {
 		}) (_cgo_ret float64) {
 			_cgo_ret = __cgo_args[0].(float64)
@@ -1081,8 +1081,8 @@ func _cgos_printf_core_vfprintf(f *Struct__IO_FILE, fmt *int8, ap *[]interface {
 	var prefix *int8
 	var t int32
 	var pl int32
-	var wc [2]uint32
-	var ws *uint32
+	var wc [2]int32
+	var ws *int32
 	var mb [4]int8
 	for {
 		if l > int32(2147483647)-cnt {
@@ -1151,7 +1151,7 @@ func _cgos_printf_core_vfprintf(f *Struct__IO_FILE, fmt *int8, ap *[]interface {
 				}
 			}() != 0 && int32(*(*int8)(unsafe.Pointer(uintptr(unsafe.Pointer(s)) + uintptr(int32(2))))) == '$' {
 				l10n = uint32(1)
-				*(*int32)(unsafe.Pointer(uintptr(unsafe.Pointer(nl_type)) + uintptr(int32(*(*int8)(unsafe.Pointer(uintptr(unsafe.Pointer(s)) + uintptr(int32(1)))))-'0')*4)) = INT
+				*(*int32)(unsafe.Pointer(uintptr(unsafe.Pointer(nl_type)) + uintptr(int32(*(*int8)(unsafe.Pointer(uintptr(unsafe.Pointer(s)) + uintptr(int32(1)))))-'0')*4)) = _cgoe_INT_vfprintf
 				w = int32((*(*_cgos_arg_vfprintf)(unsafe.Pointer(uintptr(unsafe.Pointer(nl_arg)) + uintptr(int32(*(*int8)(unsafe.Pointer(uintptr(unsafe.Pointer(s)) + uintptr(int32(1)))))-'0')*8))).i)
 				*(*uintptr)(unsafe.Pointer(&s)) += uintptr(int32(3))
 			} else if !(l10n != 0) {
@@ -1209,7 +1209,7 @@ func _cgos_printf_core_vfprintf(f *Struct__IO_FILE, fmt *int8, ap *[]interface {
 					}()
 				}
 			}() != 0 && int32(*(*int8)(unsafe.Pointer(uintptr(unsafe.Pointer(s)) + uintptr(int32(3))))) == '$' {
-				*(*int32)(unsafe.Pointer(uintptr(unsafe.Pointer(nl_type)) + uintptr(int32(*(*int8)(unsafe.Pointer(uintptr(unsafe.Pointer(s)) + uintptr(int32(2)))))-'0')*4)) = INT
+				*(*int32)(unsafe.Pointer(uintptr(unsafe.Pointer(nl_type)) + uintptr(int32(*(*int8)(unsafe.Pointer(uintptr(unsafe.Pointer(s)) + uintptr(int32(2)))))-'0')*4)) = _cgoe_INT_vfprintf
 				p = int32((*(*_cgos_arg_vfprintf)(unsafe.Pointer(uintptr(unsafe.Pointer(nl_arg)) + uintptr(int32(*(*int8)(unsafe.Pointer(uintptr(unsafe.Pointer(s)) + uintptr(int32(2)))))-'0')*8))).i)
 				*(*uintptr)(unsafe.Pointer(&s)) += uintptr(int32(4))
 			} else if !(l10n != 0) {
@@ -1497,23 +1497,23 @@ func _cgos_printf_core_vfprintf(f *Struct__IO_FILE, fmt *int8, ap *[]interface {
 			goto _cgol_17
 		}
 		_nm_cgo2 = false
-		*(*uint32)(unsafe.Pointer(uintptr(unsafe.Pointer((*uint32)(unsafe.Pointer(&wc)))) + uintptr(int32(0))*4)) = uint32(arg.i)
-		*(*uint32)(unsafe.Pointer(uintptr(unsafe.Pointer((*uint32)(unsafe.Pointer(&wc)))) + uintptr(int32(1))*4)) = uint32(0)
-		*(*unsafe.Pointer)(unsafe.Pointer(&arg)) = unsafe.Pointer((*uint32)(unsafe.Pointer(&wc)))
+		*(*int32)(unsafe.Pointer(uintptr(unsafe.Pointer((*int32)(unsafe.Pointer(&wc)))) + uintptr(int32(0))*4)) = int32(arg.i)
+		*(*int32)(unsafe.Pointer(uintptr(unsafe.Pointer((*int32)(unsafe.Pointer(&wc)))) + uintptr(int32(1))*4)) = int32(0)
+		*(*unsafe.Pointer)(unsafe.Pointer(&arg)) = unsafe.Pointer((*int32)(unsafe.Pointer(&wc)))
 		p = -1
 	_cgol_17:
 		if _nm_cgo2 && _tag_cgo1 != 'S' {
 			goto _cgol_18
 		}
 		_nm_cgo2 = false
-		ws = (*uint32)(*(*unsafe.Pointer)(unsafe.Pointer(&arg)))
+		ws = (*int32)(*(*unsafe.Pointer)(unsafe.Pointer(&arg)))
 		for i = uint64(func() (_cgo_ret int32) {
 			_cgo_addr := &l
 			*_cgo_addr = int32(0)
 			return *_cgo_addr
 		}()); i < uint64(p) && *ws != 0 && func() (_cgo_ret int32) {
 			_cgo_addr := &l
-			*_cgo_addr = Wctomb((*int8)(unsafe.Pointer(&mb)), *func() (_cgo_ret *uint32) {
+			*_cgo_addr = Wctomb((*int8)(unsafe.Pointer(&mb)), *func() (_cgo_ret *int32) {
 				_cgo_addr := &ws
 				_cgo_ret = *_cgo_addr
 				*(*uintptr)(unsafe.Pointer(_cgo_addr)) += 4
@@ -1530,10 +1530,10 @@ func _cgos_printf_core_vfprintf(f *Struct__IO_FILE, fmt *int8, ap *[]interface {
 		}
 		p = int32(i)
 		_cgos_pad_vfprintf(f, int8(' '), w, p, int32(fl))
-		ws = (*uint32)(*(*unsafe.Pointer)(unsafe.Pointer(&arg)))
+		ws = (*int32)(*(*unsafe.Pointer)(unsafe.Pointer(&arg)))
 		for i = uint64(0); i < uint64(uint32(0)+uint32(p)) && *ws != 0 && i+uint64(func() (_cgo_ret int32) {
 			_cgo_addr := &l
-			*_cgo_addr = Wctomb((*int8)(unsafe.Pointer(&mb)), *func() (_cgo_ret *uint32) {
+			*_cgo_addr = Wctomb((*int8)(unsafe.Pointer(&mb)), *func() (_cgo_ret *int32) {
 				_cgo_addr := &ws
 				_cgo_ret = *_cgo_addr
 				*(*uintptr)(unsafe.Pointer(_cgo_addr)) += 4

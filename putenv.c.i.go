@@ -25,8 +25,8 @@ func __putenv(s *int8, l uint64, r *int8) int32 {
 		}
 	}
 	var newenv **int8
-	if uintptr(unsafe.Pointer(X__environ)) == uintptr(unsafe.Pointer(_cgos_oldenv_putenv)) {
-		newenv = (**int8)(Realloc(unsafe.Pointer(_cgos_oldenv_putenv), 8*(i+uint64(2))))
+	if uintptr(unsafe.Pointer(X__environ)) == uintptr(unsafe.Pointer(_cgos___putenv_oldenv_putenv)) {
+		newenv = (**int8)(Realloc(unsafe.Pointer(_cgos___putenv_oldenv_putenv), 8*(i+uint64(2))))
 		if !(newenv != nil) {
 			goto oom
 		}
@@ -38,12 +38,12 @@ func __putenv(s *int8, l uint64, r *int8) int32 {
 		if i != 0 {
 			Memcpy(unsafe.Pointer(newenv), unsafe.Pointer(X__environ), 8*i)
 		}
-		Free(unsafe.Pointer(_cgos_oldenv_putenv))
+		Free(unsafe.Pointer(_cgos___putenv_oldenv_putenv))
 	}
 	*(**int8)(unsafe.Pointer(uintptr(unsafe.Pointer(newenv)) + uintptr(i)*8)) = s
 	*(**int8)(unsafe.Pointer(uintptr(unsafe.Pointer(newenv)) + uintptr(i+uint64(1))*8)) = (*int8)(nil)
 	X__environ = func() (_cgo_ret **int8) {
-		_cgo_addr := &_cgos_oldenv_putenv
+		_cgo_addr := &_cgos___putenv_oldenv_putenv
 		*_cgo_addr = newenv
 		return *_cgo_addr
 	}()
@@ -56,7 +56,7 @@ oom:
 	return -1
 }
 
-var _cgos_oldenv_putenv **int8
+var _cgos___putenv_oldenv_putenv **int8
 
 func Putenv(s *int8) int32 {
 	var l uint64 = uint64(uintptr(unsafe.Pointer(__strchrnul(s, '='))) - uintptr(unsafe.Pointer(s)))

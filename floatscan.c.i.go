@@ -343,11 +343,11 @@ func _cgos_decfloat_floatscan(f *Struct__IO_FILE, c int32, bits int32, emin int3
 			return float64(sign) * float64(*(*uint32)(unsafe.Pointer(uintptr(unsafe.Pointer((*uint32)(unsafe.Pointer(&x)))) + uintptr(int32(0))*4)))
 		}
 		if rp < int32(9) {
-			return float64(sign) * float64(*(*uint32)(unsafe.Pointer(uintptr(unsafe.Pointer((*uint32)(unsafe.Pointer(&x)))) + uintptr(int32(0))*4))) / float64(*(*int32)(unsafe.Pointer(uintptr(unsafe.Pointer((*int32)(unsafe.Pointer(&_cgos_p10s_floatscan)))) + uintptr(int32(8)-rp)*4)))
+			return float64(sign) * float64(*(*uint32)(unsafe.Pointer(uintptr(unsafe.Pointer((*uint32)(unsafe.Pointer(&x)))) + uintptr(int32(0))*4))) / float64(*(*int32)(unsafe.Pointer(uintptr(unsafe.Pointer((*int32)(unsafe.Pointer(&_cgos_decfloat_p10s_floatscan)))) + uintptr(int32(8)-rp)*4)))
 		}
 		var bitlim int32 = bits - int32(3)*int32(rp-int32(9))
 		if bitlim > int32(30) || *(*uint32)(unsafe.Pointer(uintptr(unsafe.Pointer((*uint32)(unsafe.Pointer(&x)))) + uintptr(int32(0))*4))>>bitlim == uint32(0) {
-			return float64(sign) * float64(*(*uint32)(unsafe.Pointer(uintptr(unsafe.Pointer((*uint32)(unsafe.Pointer(&x)))) + uintptr(int32(0))*4))) * float64(*(*int32)(unsafe.Pointer(uintptr(unsafe.Pointer((*int32)(unsafe.Pointer(&_cgos_p10s_floatscan)))) + uintptr(rp-int32(10))*4)))
+			return float64(sign) * float64(*(*uint32)(unsafe.Pointer(uintptr(unsafe.Pointer((*uint32)(unsafe.Pointer(&x)))) + uintptr(int32(0))*4))) * float64(*(*int32)(unsafe.Pointer(uintptr(unsafe.Pointer((*int32)(unsafe.Pointer(&_cgos_decfloat_p10s_floatscan)))) + uintptr(rp-int32(10))*4)))
 		}
 	}
 	for ; !(*(*uint32)(unsafe.Pointer(uintptr(unsafe.Pointer((*uint32)(unsafe.Pointer(&x)))) + uintptr(z-int32(1))*4)) != 0); z-- {
@@ -360,7 +360,7 @@ func _cgos_decfloat_floatscan(f *Struct__IO_FILE, c int32, bits int32, emin int3
 				return rp%int32(9) + int32(9)
 			}
 		}()
-		var p10 int32 = *(*int32)(unsafe.Pointer(uintptr(unsafe.Pointer((*int32)(unsafe.Pointer(&_cgos_p10s_floatscan)))) + uintptr(int32(8)-rpm9)*4))
+		var p10 int32 = *(*int32)(unsafe.Pointer(uintptr(unsafe.Pointer((*int32)(unsafe.Pointer(&_cgos_decfloat_p10s_floatscan)))) + uintptr(int32(8)-rpm9)*4))
 		var carry uint32 = uint32(0)
 		for k = a; k != z; k++ {
 			var tmp uint32 = *(*uint32)(unsafe.Pointer(uintptr(unsafe.Pointer((*uint32)(unsafe.Pointer(&x)))) + uintptr(k)*4)) % uint32(p10)
@@ -381,7 +381,7 @@ func _cgos_decfloat_floatscan(f *Struct__IO_FILE, c int32, bits int32, emin int3
 		}
 		rp += int32(9) - rpm9
 	}
-	for rp < 18 || rp == 18 && *(*uint32)(unsafe.Pointer(uintptr(unsafe.Pointer((*uint32)(unsafe.Pointer(&x)))) + uintptr(a)*4)) < *(*uint32)(unsafe.Pointer(uintptr(unsafe.Pointer((*uint32)(unsafe.Pointer(&_cgos_th_floatscan)))) + uintptr(int32(0))*4)) {
+	for rp < 18 || rp == 18 && *(*uint32)(unsafe.Pointer(uintptr(unsafe.Pointer((*uint32)(unsafe.Pointer(&x)))) + uintptr(a)*4)) < *(*uint32)(unsafe.Pointer(uintptr(unsafe.Pointer((*uint32)(unsafe.Pointer(&_cgos_decfloat_th_floatscan)))) + uintptr(int32(0))*4)) {
 		var carry uint32 = uint32(0)
 		e2 -= int32(29)
 		for k = (z - int32(1)) & 127; ; k = (k - int32(1)) & 127 {
@@ -415,11 +415,11 @@ func _cgos_decfloat_floatscan(f *Struct__IO_FILE, c int32, bits int32, emin int3
 		var sh int32 = int32(1)
 		for i = int32(0); i < int32(2); i++ {
 			k = (a + i) & 127
-			if k == z || *(*uint32)(unsafe.Pointer(uintptr(unsafe.Pointer((*uint32)(unsafe.Pointer(&x)))) + uintptr(k)*4)) < *(*uint32)(unsafe.Pointer(uintptr(unsafe.Pointer((*uint32)(unsafe.Pointer(&_cgos_th_floatscan)))) + uintptr(i)*4)) {
+			if k == z || *(*uint32)(unsafe.Pointer(uintptr(unsafe.Pointer((*uint32)(unsafe.Pointer(&x)))) + uintptr(k)*4)) < *(*uint32)(unsafe.Pointer(uintptr(unsafe.Pointer((*uint32)(unsafe.Pointer(&_cgos_decfloat_th_floatscan)))) + uintptr(i)*4)) {
 				i = int32(2)
 				break
 			}
-			if *(*uint32)(unsafe.Pointer(uintptr(unsafe.Pointer((*uint32)(unsafe.Pointer(&x)))) + uintptr((a+i)&127)*4)) > *(*uint32)(unsafe.Pointer(uintptr(unsafe.Pointer((*uint32)(unsafe.Pointer(&_cgos_th_floatscan)))) + uintptr(i)*4)) {
+			if *(*uint32)(unsafe.Pointer(uintptr(unsafe.Pointer((*uint32)(unsafe.Pointer(&x)))) + uintptr((a+i)&127)*4)) > *(*uint32)(unsafe.Pointer(uintptr(unsafe.Pointer((*uint32)(unsafe.Pointer(&_cgos_decfloat_th_floatscan)))) + uintptr(i)*4)) {
 				break
 			}
 		}
@@ -511,8 +511,8 @@ func _cgos_decfloat_floatscan(f *Struct__IO_FILE, c int32, bits int32, emin int3
 	return Scalbnl(y, e2)
 }
 
-var _cgos_th_floatscan [2]uint32 = [2]uint32{uint32(9007199), uint32(254740991)}
-var _cgos_p10s_floatscan [8]int32 = [8]int32{int32(10), int32(100), int32(1000), int32(10000), int32(100000), int32(1000000), int32(10000000), int32(100000000)}
+var _cgos_decfloat_th_floatscan [2]uint32 = [2]uint32{uint32(9007199), uint32(254740991)}
+var _cgos_decfloat_p10s_floatscan [8]int32 = [8]int32{int32(10), int32(100), int32(1000), int32(10000), int32(100000), int32(1000000), int32(10000000), int32(100000000)}
 
 func _cgos_hexfloat_floatscan(f *Struct__IO_FILE, bits int32, emin int32, sign int32, pok int32) float64 {
 	var x uint32 = uint32(0)
