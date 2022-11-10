@@ -65,7 +65,6 @@ _cgol_1:
 		goto _cgol_5
 	}
 _cgol_6:
-	type w32 = uint32
 	if uint32(*s)-uint32(1) < uint32(127) && uint64(uintptr(unsafe.Pointer(s)))%uint64(4) == uint64(0) {
 		for !((*(*uint32)(unsafe.Pointer(s))|(*(*uint32)(unsafe.Pointer(s))-uint32(16843009)))&uint32(2155905152) != 0) {
 			*(*uintptr)(unsafe.Pointer(&s)) += uintptr(int32(4))

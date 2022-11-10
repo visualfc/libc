@@ -83,12 +83,11 @@ func _cgos_in_set_vfwscanf(set *int32, c int32) int32 {
 func vfwscanf(f *Struct__IO_FILE, fmt *int32, ap []interface {
 }) int32 {
 	var (
-		_tag_cgo1                           int32
-		_nm_cgo2                            bool
-		_tag_cgo3                           int32
-		_nm_cgo4                            bool
-		_cgos_vfwscanf_spaces_vfwscanf_cgo5 [22]int32
-		gotmatch_cgo6                       int32
+		_tag_cgo1     int32
+		_nm_cgo2      bool
+		_tag_cgo3     int32
+		_nm_cgo4      bool
+		gotmatch_cgo5 int32
 	)
 	var width int32
 	var size int32
@@ -543,8 +542,7 @@ _cgol_39:
 		goto _cgol_41
 	}
 	invert = int32(1)
-	_cgos_vfwscanf_spaces_vfwscanf_cgo5 = [22]int32{' ', '\t', '\n', '\r', int32(11), int32(12), int32(133), int32(8192), int32(8193), int32(8194), int32(8195), int32(8196), int32(8197), int32(8198), int32(8200), int32(8201), int32(8202), int32(8232), int32(8233), int32(8287), int32(12288), int32(0)}
-	set = (*int32)(unsafe.Pointer(&_cgos_vfwscanf_spaces_vfwscanf_cgo5))
+	set = (*int32)(unsafe.Pointer(&_cgos_vfwscanf_spaces_vfwscanf))
 	goto _cgol_40
 _cgol_41:
 	if *func() (_cgo_ret *int32) {
@@ -597,7 +595,7 @@ _cgol_38:
 			return nil
 		}
 	}())
-	gotmatch_cgo6 = int32(0)
+	gotmatch_cgo5 = int32(0)
 	if width < int32(1) {
 		width = -1
 	}
@@ -688,7 +686,7 @@ _cgol_38:
 				return 0
 			}
 		}()
-		gotmatch_cgo6 = int32(1)
+		gotmatch_cgo5 = int32(1)
 	}
 	if !(width != 0) {
 		goto _cgol_45
@@ -704,7 +702,7 @@ _cgol_38:
 			return ungetwc(uint32(c), f)
 		}
 	}()
-	if !(t == 'c' || !(gotmatch_cgo6 != 0)) {
+	if !(t == 'c' || !(gotmatch_cgo5 != 0)) {
 		goto _cgol_46
 	}
 	goto match_fail
@@ -876,3 +874,4 @@ _cgol_67:
 }
 
 var _cgos_vfwscanf_size_pfx_vfwscanf [6][3]int8 = [6][3]int8{[3]int8{'h', 'h', '\x00'}, [3]int8{'h', '\x00'}, [3]int8{'\x00'}, [3]int8{'l', '\x00'}, [3]int8{'L', '\x00'}, [3]int8{'l', 'l', '\x00'}}
+var _cgos_vfwscanf_spaces_vfwscanf [22]int32 = [22]int32{' ', '\t', '\n', '\r', int32(11), int32(12), int32(133), int32(8192), int32(8193), int32(8194), int32(8195), int32(8196), int32(8197), int32(8198), int32(8200), int32(8201), int32(8202), int32(8232), int32(8233), int32(8287), int32(12288), int32(0)}

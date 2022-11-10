@@ -7,7 +7,6 @@ func __strchrnul(s *int8, c int32) *int8 {
 	if !(c != 0) {
 		return (*int8)(unsafe.Pointer(uintptr(unsafe.Pointer((*int8)(unsafe.Pointer(s)))) + uintptr(Strlen(s))))
 	}
-	type word = uint64
 	var w *uint64
 	for ; uint64(uintptr(unsafe.Pointer(s)))%8 != 0; *(*uintptr)(unsafe.Pointer(&s))++ {
 		if !(*s != 0) || int32(*(*uint8)(unsafe.Pointer(s))) == c {

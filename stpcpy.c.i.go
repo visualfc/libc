@@ -3,7 +3,6 @@ package libc
 import unsafe "unsafe"
 
 func __stpcpy(d *int8, s *int8) *int8 {
-	type word = uint64
 	var wd *uint64
 	var ws *uint64
 	if uint64(uintptr(unsafe.Pointer(s)))%8 == uint64(uintptr(unsafe.Pointer(d)))%8 {

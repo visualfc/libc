@@ -5,7 +5,6 @@ import unsafe "unsafe"
 func Memcpy(dest unsafe.Pointer, src unsafe.Pointer, n uint64) unsafe.Pointer {
 	var d *uint8 = (*uint8)(dest)
 	var s *uint8 = (*uint8)(src)
-	type u32 = uint32
 	var w uint32
 	var x uint32
 	for ; uint64(uintptr(unsafe.Pointer(s)))%uint64(4) != 0 && n != 0; n-- {

@@ -4,7 +4,6 @@ import unsafe "unsafe"
 
 func Strlen(s *int8) uint64 {
 	var a *int8 = s
-	type word = uint64
 	var w *uint64
 	for ; uint64(uintptr(unsafe.Pointer(s)))%8 != 0; *(*uintptr)(unsafe.Pointer(&s))++ {
 		if !(*s != 0) {

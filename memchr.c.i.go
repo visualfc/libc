@@ -16,7 +16,6 @@ func Memchr(src unsafe.Pointer, c int32, n uint64) unsafe.Pointer {
 	}() {
 	}
 	if n != 0 && int32(*s) != c {
-		type word = uint64
 		var w *uint64
 		var k uint64 = 72340172838076673 * uint64(c)
 		for w = (*uint64)(unsafe.Pointer(s)); n >= 8 && !((*w^k-72340172838076673) & ^(*w^k) & 9259542123273814144 != 0); func() uint64 {

@@ -29,8 +29,6 @@ func Memset(dest unsafe.Pointer, c int32, n uint64) unsafe.Pointer {
 	*(*uintptr)(unsafe.Pointer(&s)) += uintptr(k)
 	n -= k
 	n &= uint64(18446744073709551612)
-	type u32 = uint32
-	type u64 = uint64
 	var c32 uint32 = 16843009 * uint32(uint8(c))
 	*(*uint32)(unsafe.Pointer((*uint8)(unsafe.Pointer(uintptr(unsafe.Pointer(s)) + uintptr(int32(0)))))) = c32
 	*(*uint32)(unsafe.Pointer((*uint8)(unsafe.Pointer(uintptr(unsafe.Pointer((*uint8)(unsafe.Pointer(uintptr(unsafe.Pointer(s))+uintptr(n))))) - uintptr(int32(4)))))) = c32

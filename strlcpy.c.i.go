@@ -14,7 +14,6 @@ func Strlcpy(d *int8, s *int8, n uint64) uint64 {
 		goto finish
 	}
 	{
-		type word = uint64
 		var ws *uint64
 		if uint64(uintptr(unsafe.Pointer(s)))&7 == uint64(uintptr(unsafe.Pointer(d)))&7 {
 			for ; uint64(uintptr(unsafe.Pointer(s)))&7 != 0 && n != 0 && int32(func() (_cgo_ret int8) {

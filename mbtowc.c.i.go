@@ -29,11 +29,11 @@ func Mbtowc(wc *int32, src *int8, n uint64) int32 {
 		}()
 	}
 	if func() int32 {
-		// if !!(*(**struct___locale_map)(unsafe.Pointer(uintptr(unsafe.Pointer((**struct___locale_map)(unsafe.Pointer(&__pthread_self().Locale.Cat)))) + uintptr(int32(0))*8)) != nil) {
-		return int32(4)
-		// } else {
-		// 	return int32(1)
-		// }
+		if !!(*(**struct___locale_map)(unsafe.Pointer(uintptr(unsafe.Pointer((**struct___locale_map)(unsafe.Pointer(&__pthread_self().Locale.Cat)))) + uintptr(int32(0))*8)) != nil) {
+			return int32(4)
+		} else {
+			return int32(1)
+		}
 	}() == int32(1) {
 		return func() int32 {
 			*wc = int32(57343) & int32(int8(*s))

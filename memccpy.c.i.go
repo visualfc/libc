@@ -6,7 +6,6 @@ func Memccpy(dest unsafe.Pointer, src unsafe.Pointer, c int32, n uint64) unsafe.
 	var d *uint8 = (*uint8)(dest)
 	var s *uint8 = (*uint8)(src)
 	c = int32(uint8(c))
-	type word = uint64
 	var wd *uint64
 	var ws *uint64
 	if uint64(uintptr(unsafe.Pointer(s)))&7 == uint64(uintptr(unsafe.Pointer(d)))&7 {
