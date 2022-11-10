@@ -640,8 +640,7 @@ _cgol_37:
 			}()
 			return *_cgo_addr
 		}()+int32(1)))) != 0 {
-			_c := int8(c)
-			switch mbrtowc(&wc, &_c, uint64(1), &st) {
+			switch mbrtowc(&wc, &[]int8{int8(c)}[0], uint64(1), &st) {
 			case uint64(18446744073709551615):
 				goto input_fail
 			case uint64(18446744073709551614):
